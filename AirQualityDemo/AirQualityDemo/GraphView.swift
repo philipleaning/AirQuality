@@ -18,6 +18,7 @@ import UIKit
     public var textHeight:CGFloat = 20.0
     public var textWidth:CGFloat = 20.0
     public var minutesStored: CGFloat = 3*60
+    public var evenlySpaceTimeLabels: Bool = false
     
     //Private variables
     var pointsArray: [(time: CGFloat, yValue: CGFloat)] = []
@@ -85,7 +86,8 @@ import UIKit
         let minTextRect = CGRect(x: totalViewWidth - textWidth, y: totalViewHeight - textHeight, width: textWidth, height: textHeight)
         drawDouble(double: Double(yAxisMin), inRect: minTextRect)
         
-        drawTimeAxisLabels()
+        if evenlySpaceTimeLabels { drawEvenlySpacedTimeAxisLabels() }
+        else { drawTimeAxisLabels() }
     }
     
     public func addPoint(#timeInMinutes: CGFloat, #yValue: CGFloat) {
@@ -131,16 +133,8 @@ import UIKit
     }
     
     func drawTimeAxisLabels() {
-        /* Old labelling style, N evenly space labels
-        let rectSpacing: CGFloat = drawingAreaRect.width / CGFloat(timeAxisNumberOfValues - 1)
-        let timePerLength:CGFloat = timeWidth / drawingAreaRect.width
-        for i in 0..<timeAxisNumberOfValues {
-        let textRect = CGRect(x: leftMargin+CGFloat(i)*rectSpacing - textWidth/CGFloat(2.0), y: totalViewHeight, width: textWidth, height: textHeight)
-        let doubleToDraw = Double(startTime + CGFloat(i)*rectSpacing*timePerLength)
-        drawDouble(double: doubleToDraw, inRect: textRect)
-        }
-        */
-        //New style: Draw "-(timeWidth)mins" and "Now"
+        // Draw "-(timeWidth)mins" and "Now"
+        
         let leftRect = CGRect(x: leftMargin - textWidth/CGFloat(2.0), y: totalViewHeight, width: 50, height: textHeight)
         let rightRect = CGRect(x: leftMargin+drawingAreaRect.width - textWidth/CGFloat(2.0), y: totalViewHeight, width: 60, height: textHeight)
         drawString(string: "Now", inRect: rightRect)
@@ -151,6 +145,19 @@ import UIKit
             let timeInSeconds = Int(timeWidth*60.0)
             drawString(string: "-\(timeInSeconds) sec", inRect: leftRect)
         }
+    }
+    
+    func drawEvenlySpacedTimeAxisLabels() {
+        // N evenly space labels
+       
+        let rectSpacing: CGFloat = drawingAreaRect.width / CGFloat(timeAxisNumberOfValues - 1)
+        let timePerLength:CGFloat = timeWidth / drawingAreaRect.width
+        for i in 0..<timeAxisNumberOfValues {
+        let textRect = CGRect(x: leftMargin+CGFloat(i)*rectSpacing - textWidth/CGFloat(2.0), y: totalViewHeight, width: textWidth, height: textHeight)
+        let doubleToDraw = Double(startTime + CGFloat(i)*rectSpacing*timePerLength)
+        drawDouble(double: doubleToDraw, inRect: textRect)
+        }
+
     }
     
     func drawAxisLines() {
