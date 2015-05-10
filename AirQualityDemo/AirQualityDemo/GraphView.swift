@@ -147,7 +147,7 @@ import UIKit
         if timeWidth > 1 {
             drawString(string: "-\(Int(timeWidth)) mins", inRect: leftRect)
         }
-        else if timeWidth < 1 {
+        else if timeWidth <= 1 {
             let timeInSeconds = Int(timeWidth*60.0)
             drawString(string: "-\(timeInSeconds) sec", inRect: leftRect)
         }

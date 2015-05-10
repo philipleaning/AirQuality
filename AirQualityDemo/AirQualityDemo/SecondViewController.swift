@@ -17,14 +17,14 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
-        graphView.timeWidth = 5
+        graphView.timeWidth = 1
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // On view appearing
         graphView.addPoint(timeInMinutes: airSensor.getLatestValues().mins, yValue: airSensor.getLatestValues().value)
-        timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(1), target: self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(0.1), target: self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
     }
     
     func updateTimer() {
