@@ -18,6 +18,8 @@
 		51487A371AFA493E00D4CBE8 /* DialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51487A361AFA493E00D4CBE8 /* DialView.xib */; };
 		51487A3C1AFA55CE00D4CBE8 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51487A3B1AFA55CE00D4CBE8 /* Angle.swift */; };
 		51487A3E1AFA5E6800D4CBE8 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51487A3D1AFA5E6800D4CBE8 /* GraphView.swift */; };
+		51487A401AFA72AF00D4CBE8 /* AirSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51487A3F1AFA72AF00D4CBE8 /* AirSensor.swift */; };
+		5181727B1AFF93D30090D995 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5181727A1AFF93D30090D995 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		51487A361AFA493E00D4CBE8 /* DialView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DialView.xib; sourceTree = "<group>"; };
 		51487A3B1AFA55CE00D4CBE8 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
 		51487A3D1AFA5E6800D4CBE8 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		51487A3F1AFA72AF00D4CBE8 /* AirSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirSensor.swift; sourceTree = "<group>"; };
+		5181727A1AFF93D30090D995 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				51487A361AFA493E00D4CBE8 /* DialView.xib */,
 				51487A3B1AFA55CE00D4CBE8 /* Angle.swift */,
 				51487A3D1AFA5E6800D4CBE8 /* GraphView.swift */,
+				51487A3F1AFA72AF00D4CBE8 /* AirSensor.swift */,
+				5181727A1AFF93D30090D995 /* Extensions.swift */,
 			);
 			path = AirQualityDemo;
 			sourceTree = "<group>";
@@ -231,8 +237,10 @@
 				51487A151AFA466200D4CBE8 /* SecondViewController.swift in Sources */,
 				51487A3C1AFA55CE00D4CBE8 /* Angle.swift in Sources */,
 				51487A331AFA47F000D4CBE8 /* DialView.swift in Sources */,
+				5181727B1AFF93D30090D995 /* Extensions.swift in Sources */,
 				51487A111AFA466200D4CBE8 /* AppDelegate.swift in Sources */,
 				51487A131AFA466200D4CBE8 /* FirstViewController.swift in Sources */,
+				51487A401AFA72AF00D4CBE8 /* AirSensor.swift in Sources */,
 				51487A3E1AFA5E6800D4CBE8 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,6 +439,7 @@
 				51487A2E1AFA466200D4CBE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		51487A2F1AFA466200D4CBE8 /* Build configuration list for PBXNativeTarget "AirQualityDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +448,7 @@
 				51487A311AFA466200D4CBE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

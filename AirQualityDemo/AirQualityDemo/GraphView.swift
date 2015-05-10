@@ -52,8 +52,8 @@ import UIKit
     override init(frame: CGRect) {
         super.init(frame: frame)
         //Populate pointsArray with dummy data
-        for  i in 0...1 {addPoint(timeInMinutes: Double(i), yValue: 0.5) }
-        for i in 2...10 {addPoint(timeInMinutes: Double(i), yValue: Double(i)*0.8)}
+        for  i in 0...1 {addPoint(timeInMinutes: CGFloat(i), yValue: 0.5) }
+        for i in 2...10 {addPoint(timeInMinutes: CGFloat(i), yValue: CGFloat(i)*0.8)}
     }
     
     //Drawing routines (called when setNeedsDisplay = true)
@@ -88,7 +88,7 @@ import UIKit
         drawTimeAxisLabels()
     }
     
-    public func addPoint(#timeInMinutes: Double, #yValue: Double) {
+    public func addPoint(#timeInMinutes: CGFloat, #yValue: CGFloat) {
         //Add point to store
         pointsArray += [(time: CGFloat(timeInMinutes), yValue: CGFloat(yValue))]
         //Remove points outside required range
